@@ -1,3 +1,0 @@
-[submodule "packages/sensor"]
-	path = packages/sensor
-	url = git@github.com:aglonietis/sensor_api_sensor.git
