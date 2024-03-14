@@ -8,4 +8,4 @@ Simple Demo project
 
 ## API functionality
 1. Create a reading at http://localhost:9050/api/readings
-2. Get Reading Data at http://localhost:9050/api/readings/data
+2. Get Average temperature data at http://localhost:9050/api/readings/data
