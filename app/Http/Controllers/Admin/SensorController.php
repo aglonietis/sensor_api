@@ -1,9 +1,11 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
+use App\Domain\Sensor\Actions\StoreSensor;
 use App\Domain\Sensor\Data\StoreSensorDto;
-use App\Http\Requests\StoreSensor;
+use App\Http\Controllers\Controller;
+use App\Http\Requests\StoreSensorRequest;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\View\View;
@@ -29,7 +31,7 @@ class SensorController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(StoreSensor $request, \App\Domain\Sensor\Actions\StoreSensor $storeSensorAction): RedirectResponse
+    public function store(StoreSensorRequest $request, StoreSensor $storeSensorAction): RedirectResponse
     {
         $storeSensorAction->handle(new StoreSensorDto(
             ip: $request->input('ip'),

@@ -1,0 +1,11 @@
+GET http://localhost:9050/api/readings/data
+Accept: application/json
+Content-Type: application/json
+
+{
+    "from": "2024-03-01 00:00:00.123456",
+    "to": "2024-03-01 01:00:00.123456",
+    "sensor_id": "9b8fe6a8-5e97-402f-ad4b-1634ff8ea17d"
+}
+
+

@@ -11,11 +11,14 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('sensors', function (Blueprint $table) {
+        Schema::create('readings', function (Blueprint $table) {
             $table->uuid('id')->primary();
-            $table->string('ip')->index();
+            $table->uuid('sensor_id');
+            $table->string('reading_id')->nullable();
+            $table->decimal('temperature',6,3);
             $table->timestamps();
             $table->softDeletes();
+            $table->index('created_at');
         });
     }
 
@@ -24,6 +27,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('sensors');
+        Schema::dropIfExists('readings');
     }
 };

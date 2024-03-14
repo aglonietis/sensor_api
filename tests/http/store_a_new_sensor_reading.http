@@ -1,0 +1,13 @@
+POST http://localhost:9050/api/readings
+Accept: application/json
+Content-Type: application/json
+
+{
+    "reading": {
+        "sensor_uuid": "9b8fe6a8-5e97-402f-ad4b-1634ff8ea17d",
+        "temperature": "123.123"
+    }
+}
+
+
+

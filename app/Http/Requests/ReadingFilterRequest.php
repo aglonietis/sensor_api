@@ -5,7 +5,7 @@ namespace App\Http\Requests;
 use Illuminate\Contracts\Validation\ValidationRule;
 use Illuminate\Foundation\Http\FormRequest;
 
-class StoreSensor extends FormRequest
+class ReadingFilterRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -23,7 +23,9 @@ class StoreSensor extends FormRequest
     public function rules(): array
     {
         return [
-            'ip' => 'required|ip|unique:sensors,ip',
+            'sensor_id' => 'nullable|string|min:1|max:36',
+            'from' => 'nullable|date|date_format:Y-m-d H:i:s.u',
+            'to' => 'nullable|date|date_format:Y-m-d H:i:s.u'
         ];
     }
 }

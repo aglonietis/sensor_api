@@ -1,7 +1,7 @@
 <?php
 
+use App\Http\Controllers\Admin\SensorController;
 use App\Http\Controllers\HomeController;
-use App\Http\Controllers\SensorController;
 use Illuminate\Support\Facades\Route;
 
 /*
