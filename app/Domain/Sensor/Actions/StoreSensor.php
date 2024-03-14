@@ -12,6 +12,7 @@ class StoreSensor
         /** @var Sensor $sensor */
         $sensor = Sensor::query()->create([
            'ip' => $storeSensorDto->ip,
+            'communication_type' => $storeSensorDto->communicationType,
         ]);
 
         return $sensor;

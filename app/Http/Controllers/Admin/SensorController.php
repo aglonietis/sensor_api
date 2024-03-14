@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Domain\Sensor\Actions\StoreSensor;
 use App\Domain\Sensor\Data\StoreSensorDto;
+use App\Domain\Sensor\Enum\SensorCommunicationType;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreSensorRequest;
 use Illuminate\Http\RedirectResponse;
@@ -25,7 +26,9 @@ class SensorController extends Controller
      */
     public function create(): View
     {
-        return view('sensors.create');
+        return view('sensors.create',[
+            'communicationTypes' => SensorCommunicationType::cases(),
+        ]);
     }
 
     /**
@@ -35,6 +38,7 @@ class SensorController extends Controller
     {
         $storeSensorAction->handle(new StoreSensorDto(
             ip: $request->input('ip'),
+            communicationType: SensorCommunicationType::from($request->input('communication_type')),
         ));
 
         return response()->redirectTo(route('sensors.create'));

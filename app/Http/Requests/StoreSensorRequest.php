@@ -2,8 +2,10 @@
 
 namespace App\Http\Requests;
 
+use App\Domain\Sensor\Enum\SensorCommunicationType;
 use Illuminate\Contracts\Validation\ValidationRule;
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Validation\Rules\Enum;
 
 class StoreSensorRequest extends FormRequest
 {
@@ -24,6 +26,7 @@ class StoreSensorRequest extends FormRequest
     {
         return [
             'ip' => 'required|ip|unique:sensors,ip',
+            'communication_type' => ['required', new Enum(SensorCommunicationType::class)],
         ];
     }
 }

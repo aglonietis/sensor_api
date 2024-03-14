@@ -10,6 +10,16 @@
             </label>
             <input class="appearance-none block w-full bg-gray-200 text-gray-700 border  rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white" id="grid-ip" name="ip" type="text" placeholder="123.123.123.123">
         </div>
+        <div class="w-full md:w-100 px-3 mb-6 md:mb-0">
+            <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-communication-type">
+                Communication Type
+            </label>
+            <select id="grid-communication-type" class=" border rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" id="grid-communication-type" name="communication_type">
+                @foreach($communicationTypes as $communicationType)
+                    <option value="{{$communicationType}}">{{$communicationType}}</option>
+                @endforeach
+            </select>
+        </div>
     </div>
     <div class="flex justify-start">
         <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
