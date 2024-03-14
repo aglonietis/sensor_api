@@ -9,3 +9,7 @@ Simple Demo project. Just skeleton.
 ## API functionality
 1. Create a reading at http://localhost:9050/api/readings
 2. Get Average temperature data at http://localhost:9050/api/readings/data
+
+## Background functionality
+
+1. Request Data from External CSV sensors . Implemented with App\Domain\Sensor\Jobs\ScheduleExtenralSensorReadingsJob. Cron not active.
