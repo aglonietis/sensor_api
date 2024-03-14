@@ -1,6 +1,6 @@
 # Sensor API Demo project
 
-Simple Demo project
+Simple Demo project. Just skeleton.
 
 ## UI functionality
 1. UI at http://localhost:9050
