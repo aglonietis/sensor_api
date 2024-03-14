@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\SensorController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,6 +15,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::get('/', [HomeController::class, 'index']);
+
+Route::prefix('/sensors')->group(function () {
+    Route::get('/create', [SensorController::class, 'create'])->name('sensors.create');
+    Route::post('/', [SensorController::class, 'store'])->name('sensors.store');
 });
